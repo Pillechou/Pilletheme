@@ -1,0 +1,60 @@
+/* MENTIONS */
+%headerBarTopic,
+%markup {
+	%mention,
+	%roleMention {
+		padding: 1px 4px;
+		border-radius: 5px;
+		line-height: 22px;
+		font-weight: 500;
+		white-space: nowrap;
+		transition: all .15s ease-in-out;
+		cursor: pointer;
+	}
+	%mention {
+		background-color: hsla(0, 0%, 100%, .04);
+		color: $hover-color;
+		&:hover {
+			background-color: $main-color;
+			color: #fff;
+		}
+	}
+	strong {
+		> %mention,
+		> %roleMention {
+			font-weight: 600;
+		}
+	}
+}
+%mentioned {
+	background: radial-gradient(rgba(255, 0, 170, 0.322),rgba(0, 0, 0, 0.137)) ; //linear-gradient($hover-color,rgba(255, 0, 170, 0.137)) ;
+	&%message {
+		&%messageSelected {
+			background-color: rgba(255, 0, 170, 0.144);
+		}
+	}
+	%mouseModeFullMotion &:hover {
+		background-color: hsla(0, 0%, 100%, .08);
+	}
+	&::before {
+		background-color: $hover-color;
+	}
+	%themeDark & {
+		%mention {
+			&%mentionedInteractive{
+				color: $hover-color;
+				&:hover {
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+} 
+//New server channel welcome message #link to another channel
+%mention {
+	color: var(--main-color);
+	&:hover {
+		background-color: var(--main-color);
+	}
+}
